@@ -1,4 +1,4 @@
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/ICS1562.c,v 1.3 1999/04/17 07:06:56 dawes Exp $ */
+/* $XFree86$ */
 
 #define BASE_FREQ 14.31818
 #define MAX_FREQ 230000
