@@ -62,8 +62,10 @@
 #include "BT.h"
 #include "tga.h"
 
+#ifdef XFreeXDGA
 #define _XF86DGA_SERVER_
 #include "extensions/xf86dgastr.h"
+#endif
 
 #include "globals.h"
 #define DPMS_SERVER
