@@ -189,7 +189,7 @@ static const char *ramdacSymbols[] = {
 static const char *xaaSymbols[] = {
     "XAACreateInfoRec",
     "XAADestroyInfoRec",
-    "XAAGCIndex",
+    "XAAGetGCIndex",
     "XAAInit",
     NULL
 };
@@ -210,7 +210,7 @@ static XF86ModuleVersionInfo tgaVersRec =
 	MODULEVENDORSTRING,
 	MODINFOSTRING1,
 	MODINFOSTRING2,
-	XF86_VERSION_CURRENT,
+	XORG_VERSION_CURRENT,
 	TGA_MAJOR_VERSION, TGA_MINOR_VERSION, TGA_PATCHLEVEL,
 	ABI_CLASS_VIDEODRV,			/* This is a video driver */
 	ABI_VIDEODRV_VERSION,
