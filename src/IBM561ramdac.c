@@ -1,4 +1,4 @@
-/* $XFree86$ */
+/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/IBM561ramdac.c,v 1.4 2003/09/24 02:43:28 dawes Exp $ */
 
 #include "xf86.h"
 #include "xf86_OSproc.h"

@@ -24,7 +24,7 @@
  * tgaBTOutIndReg() and tgaBTInIndReg() are used to access 
  * the indirect TGA BT RAMDAC registers only.
  */
-/* $XFree86$ */
+/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/BTramdac.c,v 1.5 2000/10/20 12:57:26 alanh Exp $ */
 
 #include "xf86.h"
 #include "xf86_OSproc.h"
