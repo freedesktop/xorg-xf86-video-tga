@@ -22,7 +22,7 @@
  * Authors:  Alan Hourihane, <alanh@fairlite.demon.co.uk>
  *           Matthew Grossman, <mattg@oz.net> - acceleration and misc fixes
  */
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c,v 1.60tsi Exp $ */
+/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c,v 1.59 2003/04/23 21:51:48 tsi Exp $ */
 
 /* everybody includes these */
 #include "xf86.h"
@@ -90,8 +90,8 @@ static void	TGAAdjustFrame(int scrnIndex, int x, int y, int flags);
 
 /* Optional functions */
 static void	TGAFreeScreen(int scrnIndex, int flags);
-static ModeStatus TGAValidMode(int scrnIndex, DisplayModePtr mode,
-			       Bool verbose, int flags);
+static int	TGAValidMode(int scrnIndex, DisplayModePtr mode, Bool verbose,
+			     int flags);
 
 /* Internally used functions */
 static Bool	TGAMapMem(ScrnInfoPtr pScrn);
@@ -210,7 +210,7 @@ static XF86ModuleVersionInfo tgaVersRec =
 	MODULEVENDORSTRING,
 	MODINFOSTRING1,
 	MODINFOSTRING2,
-	XORG_VERSION_CURRENT,
+	XF86_VERSION_CURRENT,
 	TGA_MAJOR_VERSION, TGA_MINOR_VERSION, TGA_PATCHLEVEL,
 	ABI_CLASS_VIDEODRV,			/* This is a video driver */
 	ABI_VIDEODRV_VERSION,
@@ -1498,9 +1498,10 @@ TGAEnterVT(int scrnIndex, int flags)
 static void
 TGALeaveVT(int scrnIndex, int flags)
 {
+    TGAPtr pTga;
     ScrnInfoPtr pScrn = xf86Screens[scrnIndex];
-/*     TGAPtr pTga = TGAPTR(pScrn); */
 
+    pTga = TGAPTR(pScrn);
     TGARestore(pScrn);
 
     /* no longer necessary with new VT switching code */
@@ -1549,7 +1550,7 @@ TGAFreeScreen(int scrnIndex, int flags)
 /* Checks if a mode is suitable for the selected chipset. */
 
 /* Optional */
-static ModeStatus
+static int
 TGAValidMode(int scrnIndex, DisplayModePtr mode, Bool verbose, int flags)
 {
     if (mode->Flags & V_INTERLACE)
