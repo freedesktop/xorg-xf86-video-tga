@@ -64,15 +64,15 @@
 
 #ifdef XFreeXDGA
 #define _XF86DGA_SERVER_
-#include "extensions/xf86dgastr.h"
+#include <X11/extensions/xf86dgastr.h>
 #endif
 
 #include "globals.h"
 #define DPMS_SERVER
-#include "extensions/dpms.h"
+#include <X11/extensions/dpms.h>
 
 #include "xf86xv.h"
-#include "Xv.h"
+#include <X11/extensions/Xv.h>
 
 static const OptionInfoRec * TGAAvailableOptions(int chipid, int busid);
 static void	TGAIdentify(int flags);

@@ -31,7 +31,7 @@
 /* accelerated solid and dashed lines */
 /* adapted from xaa/xaaLine.c */
 
-#include "X.h"
+#include <X11/X.h>
 #include "misc.h"
 #include "xf86.h"
 #include "xf86_ansic.h"
