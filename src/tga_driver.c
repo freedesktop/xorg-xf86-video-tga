@@ -125,7 +125,7 @@ void TGASync(ScrnInfoPtr pScrn);
  * an upper-case version of the driver name.
  */
 
-DriverRec TGA = {
+_X_EXPORT DriverRec TGA = {
     VERSION,
     TGA_DRIVER_NAME,
     TGAIdentify,
@@ -220,7 +220,7 @@ static XF86ModuleVersionInfo tgaVersRec =
 	{0,0,0,0}
 };
 
-XF86ModuleData tgaModuleData = { &tgaVersRec, tgaSetup, NULL };
+_X_EXPORT XF86ModuleData tgaModuleData = { &tgaVersRec, tgaSetup, NULL };
 
 pointer
 tgaSetup(pointer module, pointer opts, int *errmaj, int *errmin)
