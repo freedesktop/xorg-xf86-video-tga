@@ -26,6 +26,10 @@
  * DEC TGA accelerated options.
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "fb.h"
 #include "micmap.h"
 #include "xf86.h"
@@ -507,7 +511,7 @@ TGASubsequentSolidFillRect(ScrnInfoPtr pScrn, int x, int y, int w, int h)
   TGA_FAST_WRITE_REG(pTga->current_planemask, TGA_PLANEMASK_REG);
 
   if(w > 2048) {
-    ErrorF("TGASubsequentSolidFillRect called with w = %d, truncating.\n");
+    ErrorF("TGASubsequentSolidFillRect called with w = %d, truncating.\n", w);
     w = 2048;
   }
   pixel_count = w - 1;

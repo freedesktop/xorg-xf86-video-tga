@@ -24,6 +24,10 @@
  */
 /* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c,v 1.60tsi Exp $ */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 /* everybody includes these */
 #include "xf86.h"
 #include "xf86_OSproc.h"

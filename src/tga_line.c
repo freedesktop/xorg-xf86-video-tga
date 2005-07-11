@@ -31,6 +31,10 @@
 /* accelerated solid and dashed lines */
 /* adapted from xaa/xaaLine.c */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <X11/X.h>
 #include "misc.h"
 #include "xf86.h"
