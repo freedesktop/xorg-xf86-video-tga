@@ -1,3 +1,8 @@
+2005-12-08  Adam Jackson  <ajax@freedesktop.org>
+
+	* src/Makefile.am:
+	Fix a miscompile.
+
 2005-12-03  Kevin E. Martin  <kem-at-freedesktop-dot-org>
 
 	* configure.ac:
