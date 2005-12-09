@@ -42,6 +42,6 @@ tga_drv_la_SOURCES = \
          tga_seg.c \
          tga_regs.h
 
-tga_seg.c: tga_line.c
+tga_seg.c: $(srcdir)/tga_line.c
 	echo "#define POLYSEGMENT" > tga_seg.c
-	cat tga_line.c >> tga_seg.c
+	echo "#include \"$(srcdir)/tga_line.c\"" >> tga_seg.c
