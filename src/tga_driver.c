@@ -118,9 +118,9 @@ void TGASync(ScrnInfoPtr pScrn);
 #define TGA_VERSION 4000
 #define TGA_NAME "TGA"
 #define TGA_DRIVER_NAME "tga"
-#define TGA_MAJOR_VERSION 1
-#define TGA_MINOR_VERSION 1
-#define TGA_PATCHLEVEL 0
+#define TGA_MAJOR_VERSION PACKAGE_VERSION_MAJOR
+#define TGA_MINOR_VERSION PACKAGE_VERSION_MINOR
+#define TGA_PATCHLEVEL PACKAGE_VERSION_PATCHLEVEL
 
 /* 
  * This contains the functions needed by the server after loading the driver
