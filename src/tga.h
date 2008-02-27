@@ -34,6 +34,7 @@ typedef struct {
 	unsigned long tgaRegs[0x100];
 } TGARegRec, *TGARegPtr;
 
+#define TGA_OLDPRIV (GET_ABI_MAJOR(ABI_VIDEODRV_VERSION) < 4)
 
 #define TGAPTR(p)	((TGAPtr)((p)->driverPrivate))
 
