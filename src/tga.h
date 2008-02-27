@@ -26,6 +26,7 @@
 #ifndef _TGA_H_
 #define _TGA_H_
 
+#include "tga_pcirename.h"
 #include "xaa.h"
 #include "xf86RamDac.h"
 
@@ -38,7 +39,9 @@ typedef struct {
 
 typedef struct {
     pciVideoPtr		PciInfo;
+#ifndef XSERVER_LIBPCIACCESS
     PCITAG		PciTag;
+#endif
     int			Chipset;
     RamDacHelperRecPtr	RamDac;
     int                 ChipRev;
