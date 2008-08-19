@@ -22,7 +22,6 @@
  * Authors:  Alan Hourihane, <alanh@fairlite.demon.co.uk>
  *           Matthew Grossman, <mattg@oz.net> - acceleration and misc fixes
  */
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c,v 1.60tsi Exp $ */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -37,9 +36,6 @@
 /* PCI headers */
 #include "xf86PciInfo.h"
 #include "xf86Pci.h"
-
-/* module versioning */
-#include "xf86Version.h"
 
 /* RAC stuff */
 #include "xf86Resources.h"
