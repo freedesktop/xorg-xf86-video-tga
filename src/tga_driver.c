@@ -28,6 +28,7 @@
 #endif
 
 #include <string.h>
+#include <unistd.h>
 
 /* everybody includes these */
 #include "xf86.h"
