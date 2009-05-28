@@ -177,33 +177,6 @@ static RamDacSupportedInfoRec BTramdacs[] = {
     { -1 }
 };
 
-static const char *ramdacSymbols[] = {
-    "BTramdacProbe",
-    "RamDacCreateInfoRec",
-    "RamDacDestroyInfoRec",
-    "RamDacFreeRec",
-    "RamDacGetHWIndex",
-    "RamDacHandleColormaps",
-    "RamDacInit",
-    "xf86CreateCursorInfoRec",
-    "xf86InitCursor",
-    NULL
-};
-
-static const char *xaaSymbols[] = {
-    "XAACreateInfoRec",
-    "XAADestroyInfoRec",
-    "XAAGetGCIndex",
-    "XAAInit",
-    NULL
-};
-
-static const char *fbSymbols[] = {
-    "fbPictureInit",
-    "fbScreenInit",
-    NULL
-};
-
 #ifdef XFree86LOADER
 
 static MODULESETUPPROTO(tgaSetup);
@@ -232,13 +205,6 @@ tgaSetup(pointer module, pointer opts, int *errmaj, int *errmin)
     if (!setupDone) {
 	setupDone = TRUE;
 	xf86AddDriver(&TGA, module, 0);
-
-	/*
-	 * Modules that this driver always requires can be loaded here
-	 * by calling LoadSubModule().
-	 */
-
-	LoaderRefSymLists(ramdacSymbols, fbSymbols, xaaSymbols, NULL);
 
 	/*
 	 * The return value must be non-NULL on success even though there
@@ -479,8 +445,6 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
     /* The ramdac module should be loaded here when needed */
     if (!xf86LoadSubModule(pScrn, "ramdac"))
 	return FALSE;
-
-    xf86LoaderReqSymLists(ramdacSymbols, NULL);
 
     /* Allocate the TGARec driverPrivate */
     if (!TGAGetRec(pScrn)) {
@@ -837,15 +801,12 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
 	return FALSE;
     }
 
-    xf86LoaderReqSymLists(fbSymbols, NULL);
-
     /* Load XAA if needed */
     if (!pTga->NoAccel || pTga->HWCursor) {
 	if (!xf86LoadSubModule(pScrn, "xaa")) {
 	    TGAFreeRec(pScrn);
 	    return FALSE;
 	}
-	xf86LoaderReqSymLists(xaaSymbols, NULL);
     }
 
     
