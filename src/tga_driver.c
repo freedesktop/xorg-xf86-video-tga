@@ -38,9 +38,10 @@
 #include "xf86PciInfo.h"
 #include "xf86Pci.h"
 
-/* RAC stuff */
+#ifndef XSERVER_LIBPCIACCESS
 #include "xf86Resources.h"
-
+#include "xf86RAC.h"
+#endif
 /*  #include "vgaHW.h" */
 
 /* software cursor */
@@ -53,9 +54,6 @@
 #include "micmap.h"
 
 #include "fb.h"
-
-/* more RAC stuff */
-#include "xf86RAC.h"
 
 /* Gamma Correction? */
 #include "xf86cmap.h"
@@ -471,7 +469,9 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
     /* This is the general case */
     for (i = 0; i < pScrn->numEntities; i++) {
 	pTga->pEnt = xf86GetEntityInfo(pScrn->entityList[i]);
+#ifndef XSERVER_LIBPCIACCESS
 	if (pTga->pEnt->resources) return FALSE;
+#endif
 	pTga->Chipset = pTga->pEnt->chipset;
 	pScrn->chipset = (char *)xf86TokenToString(TGAChipsets,
 						   pTga->pEnt->chipset);
@@ -765,6 +765,7 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
     xf86DrvMsg(pScrn->scrnIndex, from, "MMIO registers at 0x%lX\n",
 	       (unsigned long)pTga->IOAddress);
 
+#ifndef XSERVER_LIBPCIACCESS
     /* RAC stuff: we don't have any resources we need to reserve,
        but we should do this here anyway */
     if (xf86RegisterResources(pTga->pEnt->index, NULL, ResExclusive)) {
@@ -773,8 +774,7 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
       TGAFreeRec(pScrn);
       return FALSE;
     }
-
-    
+#endif
 
     /* HW bpp matches reported bpp */
     pTga->HwBpp = pScrn->bitsPerPixel;
