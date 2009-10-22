@@ -1,6 +1,2 @@
-.deps
-.libs
-Makefile
-Makefile.in
-*.la
-*.lo
+#		Add & Override for this directory and it's subdirectories
+tga_seg.c
