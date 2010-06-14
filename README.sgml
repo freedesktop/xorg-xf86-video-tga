@@ -1,5 +1,5 @@
 <!DOCTYPE linuxdoc PUBLIC "-//Xorg//DTD linuxdoc//EN" [
-<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+<!ENTITY % defs SYSTEM "X11/defs.ent"> %defs;
 ]>
 <article>
 
@@ -7,9 +7,6 @@
 <author>The XFree86 Project, Inc.
 <and>Updates for X11R&relvers; by Jim Gettys
 <date>March 25th, 2004
-
-<ident>
-</ident>
 
 <toc>
 
@@ -72,10 +69,10 @@ crashes with SIGFPE, or server hangs, try disabling it (see below).
 <sect>Authors
 <p>
 <itemize>
-<item>Matthew Grossman, <email>mattg@oz.net</email>
-<item>Alan Hourihane, <email>alanh@fairlite.demon.co.uk</email>
-<item>Martin Lucina, <email>mato@kotelna.sk</email>
-<item>Tim Rowley, <email>tor@cs.brown.edu</email>
+<item>Matthew Grossman, <url url="mailto:mattg@oz.net">
+<item>Alan Hourihane, <url url="mailto:alanh@fairlite.demon.co.uk">
+<item>Martin Lucina, <url url="mailto:mato@kotelna.sk">
+<item>Tim Rowley, <url url="mailto:tor@cs.brown.edu">
 </itemize>
 
 </article>
