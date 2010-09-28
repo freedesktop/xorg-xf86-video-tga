@@ -1,5 +1,3 @@
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_accel.c,v 1.15 2001/11/21 22:32:59 alanh Exp $ */
-
 /*
  * Copyright 1996,1997 by Alan Hourihane, Wigan, England.
  *

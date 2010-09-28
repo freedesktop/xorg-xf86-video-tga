@@ -21,7 +21,6 @@
  *
  * Authors:  Alan Hourihane, <alanh@fairlite.demon.co.uk>
  */
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga.h,v 1.18 2001/11/21 22:32:58 alanh Exp $ */
 
 #ifndef _TGA_H_
 #define _TGA_H_

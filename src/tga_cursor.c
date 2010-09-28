@@ -25,7 +25,6 @@
  * 
  * DEC TGA hardware cursor using BT485 ramdac
  */
-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/tga/tga_cursor.c,v 1.1 1999/04/17 07:06:58 dawes Exp $ */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

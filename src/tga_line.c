@@ -1,5 +1,3 @@
-/* $XFree86: $ */
-
 /*
  * Copyright 1999 by Matthew Grossman, Seattle, USA.
  *
