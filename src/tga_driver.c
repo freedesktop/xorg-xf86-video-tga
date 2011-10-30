@@ -267,7 +267,7 @@ TGAFreeRec(ScrnInfoPtr pScrn)
     if(pTga->buffers[0])
       free(pTga->buffers[0]);
 
-    xfree(pScrn->driverPrivate);
+    free(pScrn->driverPrivate);
     pScrn->driverPrivate = NULL;
 
     return;
@@ -351,7 +351,7 @@ TGAProbe(DriverPtr drv, int flags)
 		   TGAChipsets, TGAPciChipsets, devSections, numDevSections,
 		   drv, &usedChips);
 				    
-    xfree(devSections);
+    free(devSections);
     if (numUsed <= 0)
 	return FALSE;
 
@@ -383,7 +383,7 @@ TGAProbe(DriverPtr drv, int flags)
 	    foundScreen = TRUE;
 	}
     }
-    xfree(usedChips);
+    free(usedChips);
     return foundScreen;
 }
 
@@ -541,7 +541,7 @@ TGAPreInit(ScrnInfoPtr pScrn, int flags)
     /* Collect all of the relevant option flags (fill in pScrn->options) */
     xf86CollectOptions(pScrn, NULL);
     /* Process the options */
-    if (!(pTga->Options = xalloc(sizeof(TGAOptions))))
+    if (!(pTga->Options = malloc(sizeof(TGAOptions))))
 	return FALSE;
     memcpy(pTga->Options, TGAOptions, sizeof(TGAOptions));
     xf86ProcessOptions(pScrn->scrnIndex, pScrn->options, pTga->Options);
