@@ -102,7 +102,7 @@ DEC21030AccelInit(ScreenPtr pScreen)
   ScrnInfoPtr pScrn;
   TGAPtr pTga;
 
-  pScrn = xf86Screens[pScreen->myNum];
+  pScrn = xf86ScreenToScrn(pScreen);
   pTga = TGAPTR(pScrn);
 
   /*  ErrorF("DEC21030AccelInit called!"); */

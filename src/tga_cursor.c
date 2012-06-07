@@ -158,7 +158,7 @@ TGASetCursorColors(ScrnInfoPtr pScrn, int bg, int fg)
 Bool 
 TGAHWCursorInit(ScreenPtr pScreen)
 {
-    ScrnInfoPtr pScrn = xf86Screens[pScreen->myNum];
+    ScrnInfoPtr pScrn = xf86ScreenToScrn(pScreen);
     TGAPtr pTga;
     xf86CursorInfoPtr infoPtr;
 

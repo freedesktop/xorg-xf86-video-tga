@@ -29,6 +29,8 @@
 #include "xaa.h"
 #include "xf86RamDac.h"
 
+#include "compat-api.h"
+
 typedef struct {
 	unsigned long tgaRegs[0x100];
 } TGARegRec, *TGARegPtr;
