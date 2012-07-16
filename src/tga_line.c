@@ -42,12 +42,11 @@
 #include "pixmapstr.h"
 #include "miline.h"
 #include "xf86str.h"
-#include "xaa.h"
-#include "xaalocal.h"
 
 /*  #include "tga.h" */
 #include "tga_regs.h"
 
+#ifdef HAVE_XAA_H
 /* line functions */
 extern void
 TGASetupForSolidLine(ScrnInfoPtr pScrn, int color, int rop,
@@ -632,3 +631,4 @@ TGAPolySegment(
 }
 
     
+#endif

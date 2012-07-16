@@ -1625,8 +1625,10 @@ TGACloseScreen(CLOSE_SCREEN_ARGS_DECL)
     TGASync(pScrn);
     TGAUnmapMem(pScrn);
 
+#ifdef HAVE_XAA_H
     if(pTga->AccelInfoRec)
 	XAADestroyInfoRec(pTga->AccelInfoRec);
+#endif
     pScrn->vtSema = FALSE;
     
     pScreen->CloseScreen = pTga->CloseScreen;

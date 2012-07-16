@@ -26,7 +26,9 @@
 #define _TGA_H_
 
 #include "tga_pcirename.h"
+#ifdef HAVE_XAA_H
 #include "xaa.h"
+#endif
 #include "xf86RamDac.h"
 
 #include "compat-api.h"
@@ -72,7 +74,9 @@ typedef struct {
     TGARegRec		ModeReg;
     CARD32		AccelFlags;
     RamDacRecPtr	RamDacRec;
+#ifdef HAVE_XAA_H
     XAAInfoRecPtr	AccelInfoRec;
+#endif
     xf86CursorInfoPtr   CursorInfoRec;
     CloseScreenProcPtr	CloseScreen;
     int                 CardType;
