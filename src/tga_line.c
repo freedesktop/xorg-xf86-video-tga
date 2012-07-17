@@ -47,6 +47,8 @@
 #include "tga_regs.h"
 
 #ifdef HAVE_XAA_H
+#include "xaa.h"
+#include "xaalocal.h"
 /* line functions */
 extern void
 TGASetupForSolidLine(ScrnInfoPtr pScrn, int color, int rop,
